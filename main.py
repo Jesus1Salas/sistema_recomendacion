@@ -37,23 +37,6 @@ def get_recomendacion(titulo): # funcion para obtener las 5 peliculas similares 
     pelis=df2['title'].iloc[peliculas].tolist() # se guardan los titulos de las peliculas
     return pelis
 
-
-
-#sim_coseno=pd.read_parquet("topsimilaridades")
-
-#def get_recomendacion(titulo): # funcion para obtener las 5 peliculas similares al titulo provisto
-#    indice=df2.index[df2['title']==titulo].tolist() # se busca el indice del titulo ingresado
-#    if not indice:  # si el titulo no existe no devuelve nada
-#        return None
-#    indice=indice[0]#
-
-#    similar=sim_coseno[sim_coseno['indice']==indice].sort_values(by='similaridad',ascending=False)
-#    movi_indice=similar['indicepelisimilar'].tolist()
-#    recomenda=df2['title'].iloc[movi_indice].tolist()
-#    listado=recomenda[0:5]
-#    return listado
-
-
 #api para obtener la cantidad de filmaciones por mes
 @app.get("/cantidad_filmaciones_mes/{mes}")
 def cantidad_filmaciones_mes (mes: str):
