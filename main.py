@@ -13,7 +13,7 @@ df=pd.read_csv('dataset.csv') # se lee el documento csv
 df['release_date'] = pd.to_datetime(df['release_date'], errors='coerce') #se cambia el formato de fecha para poder determinar los dias meses y años necesarios en las apis
 
 # esta parte de codigo es usada para el modelo de recomendacion usando la similitud del coseno 
-df2=df.head(8000)  #se genera una nueva variable con el dataframe usando unicamente 8000 titulos
+df2=df.head(5000)  #se genera una nueva variable con el dataframe usando unicamente 8000 titulos
 
 #para el modelo de recomendacion se pretende utilizar las columnas overview y generos, esto permitira un mejor filtrado de peliculas similares
 df2['overview']=df2['overview'].fillna('') # se rellenan los elementos nulos o NaN
