@@ -19,21 +19,24 @@ Para optimizar el procesamiento y consumo de los datos, se han realizado los sig
 - **Filas Duplicadas**: Se analizo la cantidad de filas duplicadas para asegurar la integridad de los datos.
 - **Distribución y Correlación**: Se analizaron las distribuciones de las variables numéricas y se generó un mapa de calor para visualizar la correlación entre variables.
 
-- ###Resultado de distribucion de variables
-- 
+###Resultado de distribucion de variables
+
   ![Histogramas](Imagenes/Histogramas.png)
 
-- ###Resultado del analisis en mapa de calor
-- 
+###Resultado del analisis en mapa de calor
+
   ![Mapa de calor](Imagenes/mapacalor.png)
 
-- ###Resultado correlación entre variables
+###Resultado correlación entre variables
   ![Correlacion entre variables](Imagenes/Correlacion.png)
 
   
 ### 2. Sistema de Recomendación Basado en Similitud del Coseno
 Utilizamos la similitud del coseno para medir la relación entre películas y proporcionar recomendaciones. A partir de las características de cada película (como género, actores principales y director), el sistema calcula la similitud y recomienda películas que tengan un perfil similar al de la película consultada.
 
+#### Resultado del sistema de recomendacion
+
+ ![Resultado](Imagenes/Recomendacion.png)
 
 
 ### 3. Desarrollo de API con FastAPI
@@ -41,20 +44,26 @@ Implementamos una API con FastAPI que permite acceder a diferentes consultas y f
 
 #### Endpoints de la API
 1. **`cantidad_filmaciones_mes(Mes)`**: Retorna la cantidad de películas estrenadas en el mes especificado en español.
-
+#### Ejemplo de resultado
+ ![Resultado](Imagenes/Mes.png)
   
 2. **`cantidad_filmaciones_dia(Dia)`**: Retorna la cantidad de películas estrenadas en el día de la semana especificado en español.
 
+ ![Resultado](Imagenes/Dia.png)
    
 3. **`score_titulo(titulo_de_la_filmación)`**: Dado el título de una película, devuelve el título, el año de estreno y el puntaje de popularidad.
-  
+
+ ![Resultado](Imagenes/Score.png)
 
 4. **`votos_titulo(titulo_de_la_filmación)`**: Dado el título de una película, devuelve el título, la cantidad de votos y el promedio de votos, siempre que haya al menos 2000 valoraciones.
-   
+
+ ![Resultado](Imagenes/Votos.png)
 
 5. **`get_actor(nombre_actor)`**: Dado el nombre de un actor, devuelve la cantidad de películas en las que ha participado, su retorno total y el promedio de retorno.
 
+ ![Resultado](Imagenes/Actor.png)
    
 6. **`get_director(nombre_director)`**: Dado el nombre de un director, devuelve el éxito medido en términos de retorno, junto con el nombre de cada película, su fecha de lanzamiento, retorno individual, costo y ganancia.
- 
+
+ ![Resultado](Imagenes/Director.png)
 
