@@ -20,10 +20,10 @@ Para optimizar el procesamiento y consumo de los datos, se han realizado los sig
 - **Distribución y Correlación**: Se analizaron las distribuciones de las variables numéricas y se generó un mapa de calor para visualizar la correlación entre variables.
 
 - ** Resultado de distribucion de variables**
-- [Histogramas](Imagenes/Histogramas.png)
+  ![Histogramas](Imagenes/Histogramas.png)
 
 - ** Ressultado del analisis en mapa de calor**
-- [Mapa de calor](Imagenes/mapa de calor.png)**
+  ![Mapa de calor](Imagenes/mapacalor.png)**
 ### 2. Sistema de Recomendación Basado en Similitud del Coseno
 Utilizamos la similitud del coseno para medir la relación entre películas y proporcionar recomendaciones. A partir de las características de cada película (como género, actores principales y director), el sistema calcula la similitud y recomienda películas que tengan un perfil similar al de la película consultada.
 
