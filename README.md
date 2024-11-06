@@ -1,23 +1,29 @@
 # Sistema de Recomendación de Películas
 
-Este proyecto consiste en la construcción de un sistema de recomendación de películas mediante el cálculo de la similitud del coseno entre vectores de características, utilizando Python y una API desarrollada con FastAPI para disponibilizar los datos.
+Este proyecto consiste en la construcción de un sistema de recomendación de películas mediante el cálculo de la similitud del coseno entre vectores de características, utilizando Python, Pandas y una API desarrollada con FastAPI para disponibilizar los datos que posteriormente seran desplegados en Render.
 
 ## Descripción del Proyecto
 
 ### 1. Preparación y Reducción del Dataset
-Para optimizar el procesamiento y consumo de los datos, hemos realizado los siguientes pasos:
+Para optimizar el procesamiento y consumo de los datos, se han realizado los siguientes pasos:
 
-- **Unificación de Datasets**: Se integraron los datasets `movies_dataset` y `credits`, combinando las características necesarias en un solo dataset consolidado.
-- **Reducción de Tamaño**: El dataset final fue reducido a un tamaño de 25 MB, seleccionando únicamente las columnas relevantes.
+- **Unificación de Datasets**: Se integraron los datasets `movies_dataset` y `credits`, combinando las características necesarias en un solo dataset consolidado de nombre `dataset`.
+- **Reducción de Tamaño**: El dataset final fue reducido a un tamaño de 25 MB (aproxidamente), seleccionando únicamente las columnas relevantes para las congisnas y el modelo de recomendación.
 - **Análisis Exploratorio de Datos (EDA)**: Realizamos un análisis exploratorio para comprender la estructura y las propiedades del dataset.
+- **Despliegue(Render)**: Se realizo el despligue de la api en la plataforma de Render
 
 #### Análisis Exploratorio de Datos (EDA)
-- **Dimensiones y Tipos de Datos**: Identificamos las dimensiones del dataset final y los tipos de datos de cada columna.
-- **Análisis Estadístico**: Exploramos las estadísticas descriptivas de las variables numéricas (por ejemplo, valores medios, mínimos y máximos).
+- **Dimensiones y Tipos de Datos**: Identificamos las dimensiones del dataset final `(28771 , 20)` y los tipos de datos de cada columna: `Int64` , `float64`, `object`.
+- **Análisis Estadístico**: Exploramos las estadísticas descriptivas de las variables numéricas (por ejemplo, valores promedio, mínimos y máximos, deviación estandar, ect).
 - **Valores Únicos y Nulos**: Se analizaron las columnas para detectar valores únicos y se trató la presencia de valores nulos.
-- **Filas Duplicadas**: Se eliminaron filas duplicadas para asegurar la integridad de los datos.
+- **Filas Duplicadas**: Se analizo la cantidad de filas duplicadas para asegurar la integridad de los datos.
 - **Distribución y Correlación**: Se analizaron las distribuciones de las variables numéricas y se generó un mapa de calor para visualizar la correlación entre variables.
 
+- ** Resultado de distribucion de variables**
+- [Histogramas](Imagenes/Histogramas.png)
+
+- ** Ressultado del analisis en mapa de calor**
+- [Mapa de calor](Imagenes/mapa de calor.png)**
 ### 2. Sistema de Recomendación Basado en Similitud del Coseno
 Utilizamos la similitud del coseno para medir la relación entre películas y proporcionar recomendaciones. A partir de las características de cada película (como género, actores principales y director), el sistema calcula la similitud y recomienda películas que tengan un perfil similar al de la película consultada.
 
