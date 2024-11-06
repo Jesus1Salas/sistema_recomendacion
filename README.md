@@ -73,3 +73,5 @@ Se implemento una API con FastAPI que permite acceder a diferentes consultas y f
 
  ![Resultado](Imagenes/Director.png)
 
+## NOTAS ADICIONALES 
+Los documentos  `reduccion.ipynb` y `EDA.ipynb` en formato ipynb cuenta con los procedimientos realizados para la reduccion y analisis del dataset
