@@ -12,6 +12,10 @@ Para optimizar el procesamiento y consumo de los datos, se han realizado los sig
 - **Análisis Exploratorio de Datos (EDA)**: Realizamos un análisis exploratorio para comprender la estructura y las propiedades del dataset.
 - **Despliegue(Render)**: Se realizo el despligue de la api en la plataforma de Render
 
+#### Despligue de la api en el sistema render
+
+ ![Api](Imagenes/FastApi.png)
+
 #### Análisis Exploratorio de Datos (EDA)
 - **Dimensiones y Tipos de Datos**: Identificamos las dimensiones del dataset final `(28771 , 20)` y los tipos de datos de cada columna: `Int64` , `float64`, `object`.
 - **Análisis Estadístico**: Exploramos las estadísticas descriptivas de las variables numéricas (por ejemplo, valores promedio, mínimos y máximos, deviación estandar, ect).
@@ -19,15 +23,15 @@ Para optimizar el procesamiento y consumo de los datos, se han realizado los sig
 - **Filas Duplicadas**: Se analizo la cantidad de filas duplicadas para asegurar la integridad de los datos.
 - **Distribución y Correlación**: Se analizaron las distribuciones de las variables numéricas y se generó un mapa de calor para visualizar la correlación entre variables.
 
-###Resultado de distribucion de variables
+### Resultado de distribucion de variables
 
   ![Histogramas](Imagenes/Histogramas.png)
 
-###Resultado del analisis en mapa de calor
+### Resultado del analisis en mapa de calor
 
   ![Mapa de calor](Imagenes/mapacalor.png)
 
-###Resultado correlación entre variables
+### Resultado correlación entre variables
   ![Correlacion entre variables](Imagenes/Correlacion.png)
 
   
@@ -38,6 +42,8 @@ Utilizamos la similitud del coseno para medir la relación entre películas y pr
 
  ![Resultado](Imagenes/Recomendacion.png)
 
+#### Notas del sisma de recomendación
+Cabe mencionar que el sistema no es perfecto debido a que se limito la cantidad de elementos a analizar dentro del dataset pasando de aproximadamente `29000` a unicamente `3000`, esto se debe a que el sistema de render en su forma gratiuita no permite en analisis correspondiente a  `512 mb` de memoria ram, usar mas de `3000` datos genera que el sistema render colpase evitando el despligue de la aplicación (API) 
 
 ### 3. Desarrollo de API con FastAPI
 Implementamos una API con FastAPI que permite acceder a diferentes consultas y funciones del sistema. La API cuenta con seis endpoints, cada uno de ellos expuesto mediante un decorador `@app.get('/')` para responder a las consultas.
@@ -48,19 +54,19 @@ Implementamos una API con FastAPI que permite acceder a diferentes consultas y f
  ![Resultado](Imagenes/Mes.png)
   
 2. **`cantidad_filmaciones_dia(Dia)`**: Retorna la cantidad de películas estrenadas en el día de la semana especificado en español.
-
+#### Ejemplo de resultado
  ![Resultado](Imagenes/Dia.png)
    
 3. **`score_titulo(titulo_de_la_filmación)`**: Dado el título de una película, devuelve el título, el año de estreno y el puntaje de popularidad.
-
+#### Ejemplo de resultado
  ![Resultado](Imagenes/Score.png)
 
 4. **`votos_titulo(titulo_de_la_filmación)`**: Dado el título de una película, devuelve el título, la cantidad de votos y el promedio de votos, siempre que haya al menos 2000 valoraciones.
-
+#### Ejemplo de resultado
  ![Resultado](Imagenes/Votos.png)
 
 5. **`get_actor(nombre_actor)`**: Dado el nombre de un actor, devuelve la cantidad de películas en las que ha participado, su retorno total y el promedio de retorno.
-
+#### Ejemplo de resultado
  ![Resultado](Imagenes/Actor.png)
    
 6. **`get_director(nombre_director)`**: Dado el nombre de un director, devuelve el éxito medido en términos de retorno, junto con el nombre de cada película, su fecha de lanzamiento, retorno individual, costo y ganancia.
