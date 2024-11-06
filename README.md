@@ -43,10 +43,10 @@ Utilizamos la similitud del coseno para medir la relación entre películas y pr
  ![Resultado](Imagenes/Recomendacion.png)
 
 #### Notas del sisma de recomendación
-Cabe mencionar que el sistema no es perfecto debido a que se limito la cantidad de elementos a analizar dentro del dataset pasando de aproximadamente `29000` a unicamente `3000`, esto se debe a que el sistema de render en su forma gratiuita no permite en analisis correspondiente a  `512 mb` de memoria ram, usar mas de `3000` datos genera que el sistema render colpase evitando el despligue de la aplicación (API) 
+Cabe mencionar que el sistema no es perfecto debido a que se limito la cantidad de registros a analizar dentro del dataset, pasando de aproximadamente `29000` registros a unicamente `3000`, esto se debe a que la plataforma Render en su forma gratuita cuenta unicamente con `512 mb` de memoria ram, usar mas de `3000` registros ocasiona que el sistema Render colpase evitando el despligue de la aplicación (API) 
 
 ### 3. Desarrollo de API con FastAPI
-Implementamos una API con FastAPI que permite acceder a diferentes consultas y funciones del sistema. La API cuenta con seis endpoints, cada uno de ellos expuesto mediante un decorador `@app.get('/')` para responder a las consultas.
+Se implemento una API con FastAPI que permite acceder a diferentes consultas y funciones del sistema. La API cuenta con seis endpoints
 
 #### Endpoints de la API
 1. **`cantidad_filmaciones_mes(Mes)`**: Retorna la cantidad de películas estrenadas en el mes especificado en español.
